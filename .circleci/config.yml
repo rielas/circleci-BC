@@ -6,7 +6,7 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      - run: npm install @neuralegion/nexploit-cli -g || true
+      - run: sudo npm install @neuralegion/nexploit-cli -g || true
       - run:
           name: Starting Nexploit scan
           command: |
