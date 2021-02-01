@@ -9,7 +9,7 @@ jobs:
       - run: sudo npm install @neuralegion/nexploit-cli -g || true
       - run:
           name: Starting Nexploit scan
-          command: |
+          command: >
               SCAN_ID=$(nexploit-cli scan:run --token $NEXPLOIT_TOKEN
               --name "Test Gitlab Scan"
               --crawler https://juice-shop.herokuapp.com/
