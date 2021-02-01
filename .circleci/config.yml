@@ -6,8 +6,6 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      - run: ssh-add -L # This shows that the key was successfully added
-      - run: npm ci # or `npm install` The failure is here
       - run: npm install @neuralegion/nexploit-cli -g || true
       - run:
           name: Starting Nexploit scan
