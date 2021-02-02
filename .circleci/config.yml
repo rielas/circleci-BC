@@ -18,5 +18,7 @@ jobs:
               printenv SCAN_ID
       - run: 
           name: Get the output scan url 🔗
-          command: |
+          command: >
+            export SCAN_ID
+            printenv SCAN_ID
             printf "Scan was started with ID https://nexploit.app/scans/$SCAN_ID"
