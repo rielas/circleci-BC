@@ -28,7 +28,7 @@ jobs:
               --breakpoint medium_issue $SCAN_ID)
       - run:
           name: Stop Scan 🛑
-          command: >
-            if: ${{ always() }}
-            run: nexploit-cli scan:stop --token $NEXPLOIT_TOKEN $SCAN_ID
+          command: |
+              nexploit-cli scan:stop --token $NEXPLOIT_TOKEN $SCAN_ID
+          when: on_fail
 
