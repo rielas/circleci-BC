@@ -20,7 +20,7 @@ jobs:
             printf "Scan was started with ID https://nexploit.app/scans/$SCAN_ID"
       - run:
           name: Waiting for issues ⏳
-          command: |
+          command: >
               (nexploit-cli scan:polling
               --interval 30s
               --timeout 20m
@@ -28,7 +28,7 @@ jobs:
               --breakpoint medium_issue $SCAN_ID)
       - run:
           name: Stop Scan 🛑
-          command: |
+          command: >
             if: ${{ always() }}
             run: nexploit-cli scan:stop --token $NEXPLOIT_TOKEN $SCAN_ID
 
