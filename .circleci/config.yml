@@ -14,13 +14,13 @@ jobs:
               --name "BC Scan from CircleCI"
               --crawler https://brokencrystals.neuralegion.com
               --smart)' >> $BASH_ENV
-      - run: echo $SCAN_ID
-      - run: echo $BASH_ENV
+      - run: echo ${SCAN_ID}
+      - run: echo ${BASH_ENV}
       - run: 
           name: Get the output scan url 🔗
           command: |
-            printf "Scan was started with ID https://nexploit.app/scans/$SCAN_ID"
-            echo $SCAN_ID
+            printf "Scan was started with ID https://nexploit.app/scans/${SCAN_ID}"
+            echo ${SCAN_ID}
       - run:
           name: Waiting for issues ⏳
           command: >
@@ -28,9 +28,9 @@ jobs:
               --interval 30s
               --timeout 20m
               --token $NEXPLOIT_TOKEN
-              --breakpoint medium_issue $SCAN_ID)
-      - run: echo $SCAN_ID
-      - run: echo $BASH_ENV
+              --breakpoint medium_issue ${SCAN_ID})
+      - run: echo ${SCAN_ID}
+      - run: echo ${BASH_ENV}
       - run:
           name: Stop Scan 🛑
           command: |
