@@ -3,17 +3,19 @@ jobs:
   build:
     docker:
       - image: circleci/node:12
-    enviromment:
-      SCAN_ID: test
     working_directory: ~/repo
     steps:
+      - checkout
       - run: sudo npm install @neuralegion/nexploit-cli -g --unsafe-perm=true || true
-      - run: echo $BASH_ENV 
-      - run: test="test" 
-      - run: echo $test
-      - run: echo $SCAN_ID
+      - run: echo $MY_ENV_VAR
+      - run:
+          name: Starting Nexploit scan
+          command: >
+              SCAN_ID=$(nexploit-cli scan:run --token $NEXPLOIT_TOKEN
+              --name "Test CircleCI scan"
+              --crawler https://juice-shop.herokuapp.com/
+              --smart)
+      - run: sudo echo $SCAN_ID
       - run: printf "Scan was started with ID https://nexploit.app/scans/$SCAN_ID\n"
       - run: printf "Wait for issues ⏳\n"
-      - run: echo "testttt" 
-
 
