@@ -8,13 +8,7 @@ jobs:
     working_directory: ~/repo
     steps:
       - run: sudo npm install @neuralegion/nexploit-cli -g --unsafe-perm=true || true
-      - run:
-          name: Starting Nexploit scan
-          command: >
-              SCAN_ID=$(nexploit-cli scan:run --token $NEXPLOIT_TOKEN
-              --name "Test CircleCI scan"
-              --crawler https://juice-shop.herokuapp.com/
-              --smart)
+      - run: echo $BASH_ENV 
       - run: sudo echo $SCAN_ID
       - run: printf "Scan was started with ID https://nexploit.app/scans/$SCAN_ID\n"
       - run: printf "Wait for issues ⏳\n"
