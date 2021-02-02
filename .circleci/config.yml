@@ -14,6 +14,8 @@ jobs:
               --name "BC Scan from CircleCI"
               --crawler https://brokencrystals.neuralegion.com
               --smart)' >> $BASH_ENV
+      - run: echo $SCAN_ID
+      - run: echo $BASH_ENV
       - run: 
           name: Get the output scan url 🔗
           command: |
@@ -28,6 +30,7 @@ jobs:
               --token $NEXPLOIT_TOKEN
               --breakpoint medium_issue $SCAN_ID)
       - run: echo $SCAN_ID
+      - run: echo $BASH_ENV
       - run:
           name: Stop Scan 🛑
           command: |
