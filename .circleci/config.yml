@@ -6,6 +6,7 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
+      - run: echo 'export BS_BUILD="Build No. $CIRCLE_BUILD_NUM for CircleCI"' >> $BASH_ENV
       - run: sudo npm install @neuralegion/nexploit-cli -g --unsafe-perm=true || true
       - run: echo $MY_ENV_VAR
       - run:
