@@ -14,4 +14,7 @@ jobs:
               --name "Test Gitlab Scan"
               --crawler https://juice-shop.herokuapp.com/
               --smart)
+      - run: printf "Scan was started with ID https://nexploit.app/scans/$SCAN_ID\n"
+      - run: printf "Wait for issues ⏳\n"
+
 
