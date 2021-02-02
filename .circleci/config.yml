@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  nexploit_scan:
     docker:
       - image: circleci/node:12
     working_directory: ~/repo
