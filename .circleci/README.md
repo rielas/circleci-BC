@@ -1,1 +1,1 @@
-[![CircleCI](https://circleci.com/gh/circleci/circleci-docs/tree/teesloane-patch-5.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs/tree/teesloane-patch-5)
+[![Neuralegion](https://circleci.com/<gh>/<Neuralegion>/<circleci-BC>.svg?style=svg)](<https://app.circleci.com/pipelines/github/danizz91/circleci-BC?branch=circleci-project-setup>)
