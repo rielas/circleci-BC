@@ -1,1 +1,1 @@
-[![Neuralegion](https://circleci.com/gh/Neuralegion/circleci-BC.svg?style=svg)](https://app.circleci.com/pipelines/github/danizz91/circleci-BC?branch=circleci-project-setup)
+[![Neuralegion](https://circleci.com/gh/danizz91/circleci-BC.svg?style=svg)](https://app.circleci.com/pipelines/github/danizz91/circleci-BC?branch=circleci-project-setup)
