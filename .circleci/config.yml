@@ -19,7 +19,6 @@ jobs:
           command: |
             printf "Scan was started with ID https://nexploit.app/scans/$SCAN_ID"
             echo $SCAN_ID
-            echo $NEXPLOIT_TOKEN
       - run:
           name: Waiting for issues ⏳
           command: >
@@ -28,6 +27,7 @@ jobs:
               --timeout 20m
               --token $NEXPLOIT_TOKEN
               --breakpoint medium_issue $SCAN_ID)
+      - run: echo $SCAN_ID
       - run:
           name: Stop Scan 🛑
           command: |
