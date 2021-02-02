@@ -9,10 +9,11 @@ jobs:
       - run:
           name: Starting Nexploit scan 🏁
           command: >
-              SCAN_ID=(nexploit-cli scan:run --token $NEXPLOIT_TOKEN
+              SCAN_ID=$(nexploit-cli scan:run --token $NEXPLOIT_TOKEN
               --name "Test CircleCI scan"
               --crawler https://juice-shop.herokuapp.com/
               --smart)
+              echo $SCAN_ID
       - run: 
           name: Get the output scan url 🔗
           command: |
