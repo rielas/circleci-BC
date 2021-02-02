@@ -14,5 +14,6 @@ jobs:
       - run: echo $SCAN_ID
       - run: printf "Scan was started with ID https://nexploit.app/scans/$SCAN_ID\n"
       - run: printf "Wait for issues ⏳\n"
+      - run: echo "testttt" 
 
 
