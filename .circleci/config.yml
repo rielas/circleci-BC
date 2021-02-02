@@ -10,10 +10,10 @@ jobs:
       - run:
           name: Starting Nexploit scan 🏁
           command: >
-              echo 'SCAN_ID=$(nexploit-cli scan:run --token $NEXPLOIT_TOKEN
+              echo export SCAN_ID=$(nexploit-cli scan:run --token $NEXPLOIT_TOKEN
               --name "BC Scan from CircleCI"
               --crawler https://brokencrystals.neuralegion.com
-              --smart)' >> $BASH_ENV
+              --smart) >> "$BASH_ENV"
       - run: 
           name: Get the output scan url 🔗
           command: |
