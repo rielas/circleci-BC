@@ -18,7 +18,6 @@ jobs:
           name: Get the output scan url 🔗
           command: |
             printf "Scan was started with ID https://nexploit.app/scans/${SCAN_ID}"
-      - run: echo ${SCAN_ID}
       - run:
           name: Waiting for issues ⏳
           command: >
@@ -27,7 +26,6 @@ jobs:
               --timeout 20m
               --token $NEXPLOIT_TOKEN
               --breakpoint medium_issue ${SCAN_ID})
-      - run: echo ${SCAN_ID}
       - run:
           name: Stop Scan 🛑
           when: on_fail
