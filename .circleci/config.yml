@@ -13,11 +13,8 @@ jobs:
               --name "Test CircleCI scan"
               --crawler https://juice-shop.herokuapp.com/
               --smart)
-              bash -c 'echo $SCAN_ID'
-              export SCAN_ID
-              bash echo $SCAN_ID
-              echo $SCAN_ID
-              printf "Scan was started with ID https://nexploit.app/scans/$SCAN_ID"
+      - run: printf "Scan was started with ID https://nexploit.app/scans/$SCAN_ID"
+      - run: echo $SCAN_ID
       - run: 
           name: Get the output scan url 🔗
           command: |
