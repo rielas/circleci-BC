@@ -7,14 +7,14 @@ jobs:
     steps:
       - run: sudo npm install @neuralegion/nexploit-cli -g --unsafe-perm=true || true
       - run:
-          name: Starting Nexploit scan
-          command: >
+          name: Starting Nexploit scan 🏁
+          command: |
               SCAN_ID=$(nexploit-cli scan:run --token $NEXPLOIT_TOKEN
               --name "Test CircleCI scan"
               --crawler https://juice-shop.herokuapp.com/
               --smart)
-      - run: echo $SCAN_ID
-      - run: test="Hello World!"
-      - run: echo $test
-      - run: printf "Scan was started with ID https://nexploit.app/scans/$SCAN_ID\n"
-
+              echo "SCAN_ID=$SCAN_ID"
+      - run: 
+          name: Get the output scan url 🔗
+          command: |
+            printf "Scan was started with ID https://nexploit.app/scans/$SCAN_ID"
