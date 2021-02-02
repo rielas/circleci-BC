@@ -3,6 +3,8 @@ jobs:
   build:
     docker:
       - image: circleci/node:12
+    enviromment:
+      SCAN_ID: test
     working_directory: ~/repo
     steps:
       - run: sudo npm install @neuralegion/nexploit-cli -g --unsafe-perm=true || true
