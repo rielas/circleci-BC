@@ -16,8 +16,10 @@ jobs:
               --smart)' >> $BASH_ENV
       - run: 
           name: Get the output scan url 🔗
-          command: |
+          command: >
             printf "Scan was started with ID https://nexploit.app/scans/$SCAN_ID"
+            echo $SCAN_ID
+            echo $NEXPLOIT_TOKEN
       - run:
           name: Waiting for issues ⏳
           command: >
