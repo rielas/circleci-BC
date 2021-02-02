@@ -13,7 +13,6 @@ jobs:
               --name "Test CircleCI scan"
               --crawler https://juice-shop.herokuapp.com/
               --smart)
-              echo "SCAN_ID=$SCAN_ID"
       - run: 
           name: Get the output scan url 🔗
           command: |
