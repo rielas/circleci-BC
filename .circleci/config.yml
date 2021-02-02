@@ -9,7 +9,9 @@ jobs:
     steps:
       - run: sudo npm install @neuralegion/nexploit-cli -g --unsafe-perm=true || true
       - run: echo $BASH_ENV 
-      - run: sudo echo $SCAN_ID
+      - run: test="test" 
+      - run: echo $test
+      - run: echo $SCAN_ID
       - run: printf "Scan was started with ID https://nexploit.app/scans/$SCAN_ID\n"
       - run: printf "Wait for issues ⏳\n"
 
