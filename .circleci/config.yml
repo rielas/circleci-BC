@@ -15,7 +15,7 @@ jobs:
               --smart)
               bash -c 'echo $SCAN_ID'
               export SCAN_ID
-              printenv SCAN_ID
+              bash echo $SCAN_ID
               echo $SCAN_ID
               printf "Scan was started with ID https://nexploit.app/scans/$SCAN_ID"
       - run: 
