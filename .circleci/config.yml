@@ -13,9 +13,10 @@ jobs:
               echo 'export SCAN_ID=$(nexploit-cli scan:run --token $NEXPLOIT_TOKEN
               --name "Test CircleCI scan"
               --crawler https://juice-shop.herokuapp.com/
-              --smart)'
+              --smart)' >> $BASH_ENV
       - run: printf "Scan was started with ID https://nexploit.app/scans/$SCAN_ID"
       - run: echo ${SCAN_ID}
+      - run: echo ${BASH_ENV}
       - run: 
           name: Get the output scan url 🔗
           command: |
